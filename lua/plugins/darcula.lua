@@ -3,6 +3,6 @@ return {
 	"doums/darcula",
 	name = "darcula",
 	config = function()
-		vim.cmd("colorscheme darcula")
+		-- vim.cmd.colorscheme("darcula")
 	end
 }

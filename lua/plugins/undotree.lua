@@ -1,4 +1,4 @@
--- plugins/undotree.lua:
+-- lua/plugins/undotree.lua
 return {
-	'mbbill/undotree',
+	"mbbill/undotree",
 }
