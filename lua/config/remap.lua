@@ -7,10 +7,11 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action
 vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, { desc = "LSP Hover" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Signature Help" }) -- Not useful?
-vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { desc = "Goto Next Diagnostic" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { desc = "Goto Prev Diagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Goto Next Diagnostic" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Goto Prev Diagnostic" })
 -- vim.keymap.set("n", "<leader>tc", TODO, { desc = "Transform Code" })
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format Buffer" })
+-- vim.keymap.set("n", "<leader>f", "<cmd>FormatCode<cr>", { desc = "Format Buffer" })
 
 -- Telescope bindings
 local currDir = function()
@@ -42,6 +43,7 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<leader>e", "<cmd>Explore<cr>")
 
 
 -- TODO: quicklist navigation

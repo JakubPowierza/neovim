@@ -19,7 +19,8 @@ return {
     "hrsh7th/nvim-cmp",
     -- This lets autocompletion use lsp
     "hrsh7th/cmp-nvim-lsp",
-
+    -- This lets autocompletion use buffer symbols
+    "hrsh7th/cmp-buffer",
   },
   config = function()
     require("mason").setup()
@@ -40,13 +41,16 @@ return {
     local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     cmp.setup({
-      sources = cmp.config.sources({ { name = "nvim_lsp" } }),
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+      }),
       mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<Enter>'] = cmp.mapping.confirm({ select = true }),
+        ['<Enter>'] = cmp.mapping.confirm({ select = false }),
         ["<C-Space>"] = cmp.mapping.complete(),
       }),
     })
